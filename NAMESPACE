@@ -1,0 +1,13 @@
+useDynLib(fingers)
+
+# Export functions
+export(avesd.Dsib, avesd.Dur,  calc.dist,  choose.rev,
+       cluster.stat, cluster.stat.sub, comp.fams, cutoff,
+       cutoff.llr, dist.image, fingers, freq,
+       inherit, inherit2, llrdist, Msib,
+       Mur, parse.hclust, parse.hclust.all, pull.markers,
+       samppop, simrapd, simulfams, true.fams)
+
+# imports
+importFrom(stats, hclust, rbinom, runif, quantile)
+importFrom(graphics, plot, abline)

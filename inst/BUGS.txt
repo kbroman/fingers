@@ -1,0 +1,11 @@
+
+Bugs and bug fixes for R/fingers
+--------------------------------
+
+This file is intended to contain all known bugs in the R/fingers
+package, as well as any bug fixes, version by version.
+
+If you find a potential bug in R/fingers, please send an email, with
+as many details as possible and potentially example data, to Karl
+Broman, kbroman@biostat.wisc.edu 
+

@@ -1,0 +1,111 @@
+
+Library fingers
+===============
+
+Version 0.60-2, 11/7/2011
+
+  Added NAMESPACE.
+
+
+Version 0.59-8, 10/26/2009
+
+  Fixed links in help files.
+
+
+Version 0.59-7, 10/9/2007
+
+  Minuscule changes to the help files, to conform to a change in R.
+
+
+Version 0.59-5, 10/16/2006
+
+  Had required library "mva" for hierarchical clustering.  Now that's
+  in the package "stats".
+
+  Data sets were in old .RData format; replaced with new format.
+
+
+Version 0.59-4, 6/22/2003
+
+  In calls to C code (using the .C() function), now make use of the
+  PACKAGE argument.  
+
+
+Version 0.59-3, 11/1/2002
+
+  Fixed an error in a help file and changed several functions which
+  had an argument "data" to have argument "dat" as this caused an
+  error. Also replaced "T" by "TRUE in several functions.
+
+
+Version 0.59-2, 11/19/2001
+
+  Fixed a few errors in the help files.
+
+
+Version 0.59, 08/06/2001:
+
+  Added a function avesd.Dsib(), which is like avesd.Dur(), for
+  calculating the mean and SD of the distance between siblings
+  for the "proportion mismatches" distance.
+
+
+Version 0.58, 07/09/2001:
+
+  The function fingers() now returns the value of the cutoff used as
+  an "attribute."  This is done so that one can obtain the value of
+  the optimized cutoff, when that is done.
+
+
+Version 0.57, 07/06/2001:
+
+  Revised function fingers so that it takes an argument "method" to be
+  passed to hclust (for different hierarchical clustering methods,
+  such as "average" and "complete").  When "cutoff" is missing, we
+  optimize the cutoff to give the cluster result giving the largest
+  adj-Rand index; in this case, the true family structure must be
+  given via the argument "truefam".  
+
+
+Version 0.56, 07/05/2001:
+
+  Revised "cutoff" and "cutoff.llr" so that there is an argument
+  "method" which may be "meansib", "qu" (quantile among unrelateds),
+  "qs" (quantile among siblings) and "lr" (likelihood ratio comparing
+  unrelateds to siblings).
+
+
+Version 0.55, 07/02/2001:
+
+  Revise "cluster.stat" so that it may give not just the Rand index,
+  but also the adjusted-Rand index, the Fowlkes and Mallows index, and
+  Karl Broman's index.
+
+
+Version 0.54, 06/01/2001:
+
+  Added function cutoff3 and revised cutoff2; both are in C, and
+  allow "quick" estimation of the cutoffs using the normal 
+  approximation, or a non-quick version via simulation or
+  enumeration. 
+
+
+Version 0.53, 05/31/2001:
+
+  We've fixed an error in llrdist (which had made it totally wrong).
+
+
+Version 0.52, 05/18/2001:
+
+  We're just getting started with this package.
+
+  The intent is to reproduce, within R, the FINGERS program written by
+  Bill Black (Colorado State), for identifying clusters of full
+  sibling families using RAPD data. 
+
+
+----------------------------------------------------------------------
+copyright (c) 2001-7, Karl W Broman
+Licensed under the GNU General Public License version 2 (June, 1991)
+
+http://www.biostat.wisc.edu/~kbroman
