@@ -105,7 +105,4 @@ Version 0.52, 05/18/2001:
 
 
 ----------------------------------------------------------------------
-copyright (c) 2001-7, Karl W Broman
-Licensed under the GNU General Public License version 2 (June, 1991)
-
 http://www.biostat.wisc.edu/~kbroman
