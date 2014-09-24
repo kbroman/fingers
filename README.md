@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kbroman/qtlsim.png?branch=master)](https://travis-ci.org/kbroman/qtlsim)
 
-copyright (c) 2001-2012, [Karl W Broman](http://kbroman.org)
+[Karl W Broman](http://kbroman.org)
 
 [R/fingers](https://github.com/kbroman/fingers) is an R package for identifying clusters of related
 individuals with genotype data at dominant markers.
