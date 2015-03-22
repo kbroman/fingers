@@ -1,6 +1,6 @@
 ## R/fingers
 
-[![Build Status](https://travis-ci.org/kbroman/qtlsim.png?branch=master)](https://travis-ci.org/kbroman/qtlsim)
+[![Build Status](https://travis-ci.org/kbroman/qtlsim.svg?branch=master)](https://travis-ci.org/kbroman/qtlsim)
 
 [Karl W Broman](http://kbroman.org)
 
