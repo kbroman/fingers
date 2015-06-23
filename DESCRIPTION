@@ -7,4 +7,4 @@ Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
 Description: Identifying clusters of related individuals
 Depends: R (>= 2.10.1), stats, graphics
 License: GPL (version 2 or later)
-URL: http://www.biostat.wisc.edu/~kbroman/software
+URL: https://github.com/kbroman/fingers
