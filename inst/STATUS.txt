@@ -1,6 +1,9 @@
-
-Library fingers
-===============
+Revision history for the R/fingers package
+----------------------------------------------------------------------
+copyright (c) 2001-2011, Karl W Broman
+Licensed under the GNU General Public License version 2 (June, 1991)
+https://github.com/kbroman/fingers
+----------------------------------------------------------------------
 
 Version 0.60-2, 11/7/2011
 
@@ -28,7 +31,7 @@ Version 0.59-5, 10/16/2006
 Version 0.59-4, 6/22/2003
 
   In calls to C code (using the .C() function), now make use of the
-  PACKAGE argument.  
+  PACKAGE argument.
 
 
 Version 0.59-3, 11/1/2002
@@ -64,7 +67,7 @@ Version 0.57, 07/06/2001:
   such as "average" and "complete").  When "cutoff" is missing, we
   optimize the cutoff to give the cluster result giving the largest
   adj-Rand index; in this case, the true family structure must be
-  given via the argument "truefam".  
+  given via the argument "truefam".
 
 
 Version 0.56, 07/05/2001:
@@ -85,9 +88,9 @@ Version 0.55, 07/02/2001:
 Version 0.54, 06/01/2001:
 
   Added function cutoff3 and revised cutoff2; both are in C, and
-  allow "quick" estimation of the cutoffs using the normal 
+  allow "quick" estimation of the cutoffs using the normal
   approximation, or a non-quick version via simulation or
-  enumeration. 
+  enumeration.
 
 
 Version 0.53, 05/31/2001:
@@ -101,8 +104,4 @@ Version 0.52, 05/18/2001:
 
   The intent is to reproduce, within R, the FINGERS program written by
   Bill Black (Colorado State), for identifying clusters of full
-  sibling families using RAPD data. 
-
-
-----------------------------------------------------------------------
-http://www.biostat.wisc.edu/~kbroman
+  sibling families using RAPD data.
