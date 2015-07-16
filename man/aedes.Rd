@@ -2,10 +2,10 @@
 \alias{aedes}
 
 \title{Data on Aedes aegypti}
-\description{ 
+\description{
   This is RAPD data for 40 loci typed on a set of 10 full-sibling
   families, with 15 individuals in each family.
-} 
+}
 \usage{data(aedes)}
 \format{
   The data is a matrix of 150 rows (the individuals) by 40 columns (the
@@ -19,10 +19,9 @@
   site using RAPD-PCR markers: applications to the mosquito \emph{Aedes
   aegypti}.  Theor Appl Genet 86:991-1000.
 }
-  
+
 \source{FINGERS software, WC Black IV, Colorado State University \cr
-  \url{ftp://lamar.colostate.edu/pub/wcb4} \cr
-  \url{http://www.cvmbs.colostate.edu/microbiology/black.htm}
+  \url{http://csu-cvmbs.colostate.edu/academics/mip/aidl/Pages/black-william.aspx}
 }
 
 \author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
