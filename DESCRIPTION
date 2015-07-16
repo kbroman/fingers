@@ -1,10 +1,11 @@
 Package: fingers
-Version: 0.60-2
-Date: 11/7/2011
-Title: Identifying clusters of related individuals
+Version: 0.60-3
+Date: 2015-07-16
+Title: Identifying Clusters of Related Individuals
 Author: Karl W Broman <kbroman@biostat.wisc.edu> with contributions from Laura Plantinga
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
-Description: Identifying clusters of related individuals
-Depends: R (>= 2.10.1), stats, graphics
-License: GPL (version 2 or later)
+Description: Identifying clusters of related individuals.
+Depends: R (>= 2.10.1)
+Imports: stats, graphics
+License: GPL-3
 URL: https://github.com/kbroman/fingers
