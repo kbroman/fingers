@@ -9,5 +9,6 @@ export(avesd.Dsib, avesd.Dur,  calc.dist,  choose.rev,
        samppop, simrapd, simulfams, true.fams)
 
 # imports
-importFrom(stats, hclust, rbinom, runif, quantile)
-importFrom(graphics, plot, abline)
+importFrom(stats, hclust, rbinom, runif, quantile, as.dist)
+importFrom(graphics, plot, abline, image, par, text)
+importFrom(grDevices, topo.colors)

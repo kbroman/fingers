@@ -6,7 +6,7 @@
 # May and July, 2001
 # Last modified Oct, 2006
 # Licensed under the GNU General Public License version 2 (June, 1991)
-# 
+#
 # Part of the R/fingers package
 # Contains: fingers, parse.hclust
 #           fingers2, parse.hclust.all
@@ -30,14 +30,11 @@ function(dist,cutoff,method=c("average","complete",
          "mcquitty","single","ward"),truefam,
          make.plot=FALSE,just.plot=FALSE)
 {
-  # library needed for as.dist() and hclust()
-  require(stats)
-
   method <- match.arg(method)
 
   n.ind <- nrow(dist)
   ind.names <- rownames(dist)
-  
+
   # calculate distance matrix; put in form that hclust needs
   d <- as.dist(dist)
 
@@ -47,13 +44,13 @@ function(dist,cutoff,method=c("average","complete",
   # plot the hclust tree?
   if(make.plot || just.plot) {
     plot(ho)
-    if(!missing(cutoff)) 
+    if(!missing(cutoff))
       abline(h=cutoff,lwd=2,lty=2)
   }
 
   if(!just.plot) {
     if(missing(cutoff)) { # find best possible cutoff
-      if(missing(truefam)) 
+      if(missing(truefam))
         stop("Include either cutoff or truefam as an argument.")
       co <- parse.hclust.all(ho,truefam)
     }
@@ -76,7 +73,7 @@ function(dist,cutoff,method=c("average","complete",
   else invisible()
 
 }
-  
+
 
 # Parse the output from hclust
 #     This was a real pain!
@@ -97,7 +94,7 @@ function(hclust.out, cutoff)
   #
   # We look at the clusters which result when we chop
   #     the tree at "cutoff"
-  # 
+  #
   if(cutoff > max(hclust.out$height)) {
     # all one cluster
     fam <- list(1:n.ind)
@@ -148,10 +145,10 @@ function(hclust.out, cutoff)
             x2 <- paste(":",":",sep=as.character(m[i,2]))
             p1 <- grep(x1,names(fam))
             p2 <- grep(x2,names(fam))
-            
+
             pmin <- min(c(p1,p2))
             pmax <- max(c(p1,p2))
-            
+
             fam[[pmin]] <- c(fam[[pmin]],fam[[pmax]])
             names(fam)[pmin] <- paste(names(fam[pmin]),
                                       names(fam[pmax]),
@@ -184,7 +181,7 @@ function(hclust.out, cutoff)
 
 
 
-# This is just like parse.hclust, but 
+# This is just like parse.hclust, but
 #   runs through *all* possible cutoffs, and calculates
 #   the adjusted Rand index for each, using a given set
 #   of "true" families, and returns the "ideal" cutoff.
@@ -201,7 +198,7 @@ function(hclust.out, truefam)
   h <- hclust.out$height
   h <- c(apply(cbind(h[-1],h[-length(h)]),1,mean),max(h)+0.5)
   index <- 1:length(h)
-  
+
   for(i in 1:nrow(m)) {
     if(m[i,1] < 0 && m[i,2] < 0) {   # totally new family
       fam[[n.fam+1]] <- -c(m[i,1],m[i,2])
@@ -231,10 +228,10 @@ function(hclust.out, truefam)
           x2 <- paste(":",":",sep=as.character(m[i,2]))
           p1 <- grep(x1,names(fam))
           p2 <- grep(x2,names(fam))
-          
+
           pmin <- min(c(p1,p2))
           pmax <- max(c(p1,p2))
-          
+
           fam[[pmin]] <- c(fam[[pmin]],fam[[pmax]])
           names(fam)[pmin] <- paste(names(fam[pmin]),
                                     names(fam[pmax]),
@@ -247,12 +244,12 @@ function(hclust.out, truefam)
         }
       }
     } # end else
-    
+
     loners <- (1:n.ind)[is.na(sapply(1:n.ind,
                                      function(x,y) match(x,y), unlist(fam)))]
-    
+
     index[i] <- cluster.stat(c(fam,as.list(loners)),truefam,method="adj")
-                        
+
   } # end of loop
 
   h[index==max(index)][1]
