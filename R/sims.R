@@ -6,7 +6,7 @@
 # Last modified Nov, 2002
 # First written May, 2001
 # Licensed under the GNU General Public License version 2 (June, 1991)
-# 
+#
 # Part of the R/fingers package
 # Contains: simrapd, inherit
 #           simulfams, inherit2, samppop
@@ -48,7 +48,7 @@ function(n.sib = rep(15,10),
 
 }
 
-         
+
 ######################################################################
 #
 # inherit: a subroutine for simrapd
@@ -61,10 +61,10 @@ function(par.g)
   n <- par.g[length(par.g)]
   par.g <- par.g[-length(par.g)]
   x <- matrix(rep(par.g,n),ncol=n)
-  apply(x,2,function(a) { a[a==1] <- sample(0:1,sum(a==1),repl=TRUE); a[a==2] <- 1; a })
+  apply(x,2,function(a) { a[a==1] <- sample(0:1,sum(a==1),replace=TRUE); a[a==2] <- 1; a })
 }
 
-         
+
 ######################################################################
 #
 # simulfams: basically the same as sibrapd
@@ -73,10 +73,10 @@ function(par.g)
 ######################################################################
 
 simulfams <-
-function(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
+function(n.sib=sample(5:20,size=sample(5:20,size=1),replace=TRUE),
          p=runif(sample(5:15,size=1),min=0.1,max=0.6))
 {
-  # this function simulates a set of full-sibling families 
+  # this function simulates a set of full-sibling families
   # assuming no half-siblings and parents not in sample
   # n.fam is the number of families
   # n.loci is the number of loci evaluable with RAPD analysis
@@ -92,7 +92,7 @@ function(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
 
 
   for (i in 1:n.fam) {
-			
+
     # gen.father = genotype of father (0=aa,1=Aa,2=AA)
     # gen.mother = genotype of mother (0=aa,1=Aa,2=AA)
     # lengths of gen.father and gen.mother are n.loci
@@ -103,7 +103,7 @@ function(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
     gen.sib <- apply(gen.parents,1,inherit2,n.sib[i])
     if (i==1) gen <- gen.sib else gen<- rbind(gen,gen.sib)
   }
-        
+
   # convert genotypes (0,1,2) to phenotypes (0=absence of band, 1=presence of band)
   gen[gen==2] <- 1
 
@@ -126,11 +126,11 @@ function(g,sib)
   # g1 = allele from father (0=a, 1=A)
   # g2 = allele from mother (0=a, 1=A)
   # sib = number of siblings in family
-  
+
   pf <- g[1]/2
   pm <- g[2]/2
-  g1 <- sample(0:1,prob=c(1-pf,pf),size=sib, repl=TRUE)
-  g2 <- sample(0:1,prob=c(1-pm,pm),size=sib, repl=TRUE)
+  g1 <- sample(0:1,prob=c(1-pf,pf),size=sib, replace=TRUE)
+  g2 <- sample(0:1,prob=c(1-pm,pm),size=sib, replace=TRUE)
   g1+g2
 }
 
@@ -138,7 +138,7 @@ samppop <-
 function(p)
 {
   # this function assigns a genotype based on values of p for population
-  sample(0:2,1,prob=p)		
+  sample(0:2,1,prob=p)
 }
 
 # end of sims.R

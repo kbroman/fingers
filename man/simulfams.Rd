@@ -8,7 +8,7 @@
 }
 
 \usage{
-simulfams(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
+simulfams(n.sib=sample(5:20,size=sample(5:20,size=1),replace=TRUE),
           p=runif(sample(5:15,size=1),min=0.1,max=0.6))
 }
 
@@ -21,7 +21,7 @@ simulfams(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
 
 \details{
   The RAPDs are assumed to be in Hardy-Weinberg equilibrium.
-}  
+}
 
 \value{
   A matrix of dimension (n.ind x n.mar), giving the RAPD phenotypes for
@@ -43,5 +43,5 @@ simulfams(n.sib=sample(5:20,size=sample(5:20,size=1),repl=TRUE),
 \examples{
 data <- simulfams(rep(20,5), p=runif(40, 0.1, 0.6))
 }
-                    
+
 \keyword{datagen}
