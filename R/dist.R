@@ -54,12 +54,6 @@ function(dat)
 llrdist <-
 function(dat, p=freq(dat))
 {
-#  if(!is.loaded("llrdist_wrap")) {
-#    lib.file <- file.path("./", paste("llrdist", .Platform$dynlib.ext,sep=""))
-#    dyn.load(lib.file)
-#    cat(paste(" -Loaded", lib.file), "\n")
-#  }
-
   nind <- nrow(dat)
   nmar <- ncol(dat)
 
