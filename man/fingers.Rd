@@ -9,8 +9,8 @@
 }
 
 \usage{
-fingers(dist,cutoff,method=c("average","complete",
-         "mcquitty","single","ward"),truefam,
+fingers(dist,cutoff=NULL,method=c("average","complete",
+         "mcquitty","single","ward"),truefam=NULL,
          make.plot=FALSE,just.plot=FALSE)
 }
 
@@ -19,16 +19,16 @@ fingers(dist,cutoff,method=c("average","complete",
    between individuals.}
  \item{cutoff}{A value to use to cut off the dendogram formed by
    hierarchical clustering in order to define a set of
-   clusters. (Optional, but if excluded, the argument \code{truefam}
+   clusters. (Optional, but if NULL, the argument \code{truefam}
    must be included.)}
  \item{method}{A hierarchical clustering method.  See
    \code{\link[stats]{hclust}}. \emph{Note:} We haven't allowed
    \code{centroid} or \code{median}, because these weren't working for
    us.}
  \item{truefam}{The true family structure; used only if \code{cutoff} is
-   missing, in which case all possible cutoffs are tried, and that
+   NULL, in which case all possible cutoffs are tried, and that
    giving the maximum adjusted Rand index is used.}
- \item{make.plot}{If TRUE, make a plot of the dendogram formed by 
+ \item{make.plot}{If TRUE, make a plot of the dendogram formed by
    hierarchical clustering.}
  \item{just.plot}{If TRUE, just make the plot; don't return the inferred
    families.  (In this case, the \code{cutoff} argument is not needed.)}
@@ -37,7 +37,7 @@ fingers(dist,cutoff,method=c("average","complete",
 \details{
   We use the function \code{\link[stats]{hclust}}
   to do the cluster analysis.
-}  
+}
 
 \value{
   A list of clusters; each component in the list is one inferred family,
@@ -73,5 +73,5 @@ fam <- fingers(d,co,make.plot=TRUE)
 tf <- true.fams(aedes)
 cluster.stat(fam,tf)
 }
-                    
+
 \keyword{cluster}

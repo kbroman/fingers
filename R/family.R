@@ -2,19 +2,19 @@
 #
 # family.R
 #
-# copyright (c) 2001-2, Karl W Broman
+# copyright (c) 2001-2016, Karl W Broman
 # Last modified Nov, 2002
-# First written May, 2001
+# First written Apr, 2016
 # Licensed under the GNU General Public License version 2 (June, 1991)
-# 
+#
 # Part of the R/fingers package
-# Contains: true.fams, cluster.stat, comp.fams, dist.image, 
+# Contains: true.fams, cluster.stat, comp.fams, dist.image,
 #           cluster.stat.sub
 #
 ######################################################################
 
 # Identify the true family structure using the rownames in
-# a RAPD data set 
+# a RAPD data set
 true.fams <-
 function(dat)
 {
@@ -28,11 +28,11 @@ function(dat)
 }
 
 # Statistic for measuring the similarity between true
-#   and estimated clustering 
+#   and estimated clustering
 cluster.stat <-
 function(fam1,fam2,method=c("all","rand","adj","fm","kb"))
 {
-  method <- match.arg(method) 
+  method <- match.arg(method)
   result <- NULL
   n <- length(unlist(fam2))
   nc2 <- choose(n,2)
@@ -62,7 +62,7 @@ function(fam1,fam2,method=c("all","rand","adj","fm","kb"))
   }
 
   # adj-Rand or Fowlkes and Mallows
-  if(method=="adj" || method=="fm" || method=="all") { 
+  if(method=="adj" || method=="fm" || method=="all") {
     f1 <- cbind(unlist(fam1), rep(1:length(fam1), sapply(fam1, length)))
     f2 <- cbind(unlist(fam2), rep(1:length(fam2), sapply(fam2, length)))
     tab <- table(f2[order(f2[, 1]), 2], f1[order(f1[, 1]), 2])
@@ -126,11 +126,11 @@ function(fam1,fam2)
 
   x <- table(f2[order(f2[,1]),2],f1[order(f1[,1]),2])
 
-  if(all(apply(x,1,function(x) sum(x!=0))==1)) 
+  if(all(apply(x,1,function(x) sum(x!=0))==1))
     cat("    All families are the same.\n")
   else cat("    There are some differences.\n")
   list(x,comp)
-    
+
 }
 
 # use "image" to plot the distance matrix
@@ -139,15 +139,15 @@ function(fam1,fam2)
 #     are together
 #
 dist.image <-
-function(dist,fams,col=topo.colors(1+ncol(dist)),...)
+function(dist,fams=NULL,col=topo.colors(1+ncol(dist)),...)
 {
   n <- nrow(dist)
-  
-  if(!missing(fams)) {
+
+  if(!is.null(fams)) {
     dist <- dist[unlist(fams),unlist(fams)]
     fam.len <- cumsum(c(0,sapply(fams,length)))+0.5
   }
-  
+
   image(1:n,1:n,dist,xlab="Worms",ylab="Worms",main="Distance matrix",
         col=col,...)
 
@@ -155,7 +155,7 @@ function(dist,fams,col=topo.colors(1+ncol(dist)),...)
   abline(v=a[1:2])
   abline(h=a[3:4])
 
-  if(!missing(fams)) {
+  if(!is.null(fams)) {
     abline(h=fam.len)
     abline(v=fam.len)
     for(i in 2:length(fam.len)) {
@@ -166,11 +166,11 @@ function(dist,fams,col=topo.colors(1+ncol(dist)),...)
 }
 
 
-# 
+#
 # determine quality of results of the cluster analysis
-# 
+#
 #check.fams <-
-#function(fam) 
+#function(fam)
 #{
 #  true <- lapply(fam,function(x) as.numeric(sapply(strsplit(names(x),"-"),
 #                                            function(y) y[1])))

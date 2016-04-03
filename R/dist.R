@@ -2,11 +2,11 @@
 #
 # dist.R
 #
-# copyright (c) 2001-2, Karl W Broman
+# copyright (c) 2001-2016, Karl W Broman
 # Last modified Nov, 2002
-# First written May, 2001
+# First written Apr, 2016
 # Licensed under the GNU General Public License version 2 (June, 1991)
-# 
+#
 # Part of the R/fingers package
 # Contains: calc.dist, llrdist
 #
@@ -52,15 +52,13 @@ function(dat)
 ######################################################################
 
 llrdist <-
-function(dat, p=freq(dat))  
+function(dat, p=freq(dat))
 {
 #  if(!is.loaded("llrdist_wrap")) {
 #    lib.file <- file.path("./", paste("llrdist", .Platform$dynlib.ext,sep=""))
 #    dyn.load(lib.file)
 #    cat(paste(" -Loaded", lib.file), "\n")
 #  }
-
-  if(missing(p)) p <- freq(dat)
 
   nind <- nrow(dat)
   nmar <- ncol(dat)
@@ -76,8 +74,8 @@ function(dat, p=freq(dat))
   z <- matrix(z$dist,ncol=nind)
   dimnames(z) <- list(rownames(dat),rownames(dat))
   z
-                      
+
 }
 
-                  
+
 # end of dist.R

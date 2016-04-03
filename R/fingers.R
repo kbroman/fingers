@@ -2,9 +2,9 @@
 #
 # fingers.R
 #
-# copyright (c) 2001-6, Karl W Broman
+# copyright (c) 2001-2016, Karl W Broman
 # May and July, 2001
-# Last modified Oct, 2006
+# Last modified Apr, 2016
 # Licensed under the GNU General Public License version 2 (June, 1991)
 #
 # Part of the R/fingers package
@@ -17,17 +17,17 @@
 # groups of full siblings based on RAPD data.
 
 # dist = distance matrix
-# cutoff = cutoff value; if missing, one must include "truefam" instead
+# cutoff = cutoff value; if NULL, one must include "truefam" instead
 # method = hierachical clustering method (see hclust)
-# truefam = true family structures (include if cutoff is missing,
+# truefam = true family structures (include if cutoff is NULL,
 #           in which case we find the cutoff that maximizes the
 #           adjusted Rand index
 # make.plot = plot the dendrogram
 # just.plot = just make the plot; don't return the inferred families
 
 fingers <-
-function(dist,cutoff,method=c("average","complete",
-         "mcquitty","single","ward"),truefam,
+function(dist,cutoff=NULL,method=c("average","complete",
+         "mcquitty","single","ward"),truefam=NULL,
          make.plot=FALSE,just.plot=FALSE)
 {
   method <- match.arg(method)
@@ -44,13 +44,13 @@ function(dist,cutoff,method=c("average","complete",
   # plot the hclust tree?
   if(make.plot || just.plot) {
     plot(ho)
-    if(!missing(cutoff))
+    if(!is.null(cutoff))
       abline(h=cutoff,lwd=2,lty=2)
   }
 
   if(!just.plot) {
-    if(missing(cutoff)) { # find best possible cutoff
-      if(missing(truefam))
+    if(is.null(cutoff)) { # find best possible cutoff
+      if(is.null(truefam))
         stop("Include either cutoff or truefam as an argument.")
       co <- parse.hclust.all(ho,truefam)
     }

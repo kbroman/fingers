@@ -9,7 +9,7 @@
 }
 
 \usage{
-dist.image(dist,fams,col=topo.colors(1+ncol(dist)),\dots)
+dist.image(dist,fams=NULL,col=topo.colors(1+ncol(dist)),\dots)
 }
 
 \arguments{
@@ -40,5 +40,5 @@ d <- calc.dist(aedes)
 fam <- fingers(d,co,make.plot=TRUE)
 dist.image(d,fam)
 }
-                    
+
 \keyword{cluster}
