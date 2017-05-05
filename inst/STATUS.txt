@@ -1,9 +1,14 @@
 Revision history for the R/fingers package
 ----------------------------------------------------------------------
-copyright (c) 2001-2011, Karl W Broman
+copyright (c) 2001-2017, Karl W Broman
 Licensed under the GNU General Public License version 2 (June, 1991)
 https://github.com/kbroman/fingers
 ----------------------------------------------------------------------
+
+Version 0.60-5, 2017-05-05
+
+  Small changes to avoid Note about "R_registerRoutines"
+
 
 Version 0.60-2, 11/7/2011
 

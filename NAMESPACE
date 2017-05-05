@@ -1,4 +1,4 @@
-useDynLib(fingers)
+useDynLib(fingers, .registration=TRUE)
 
 # Export functions
 export(avesd.Dsib, avesd.Dur,  calc.dist,  choose.rev,
