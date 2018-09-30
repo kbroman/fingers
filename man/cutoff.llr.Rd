@@ -5,7 +5,7 @@
 
 \description{
   Calculate a cutoff (for the LLR distance measure) for hierarchical
-  cluster analysis to infer groups of related individuals with RAPD data. 
+  cluster analysis to infer groups of related individuals with RAPD data.
 }
 
 \usage{
@@ -21,14 +21,14 @@ cutoff.llr(f,method=c("qu","meansib","qs","lr"),value=0.2)
    likelihood ratio for unrelateds vs. siblings (\code{lr}).}
  \item{value}{For \code{method="qu"} or \code{method="qs"}, this should
    specify the quantile; for \code{method="lr"}, this should specify the
-   likelihood ratio.}  
+   likelihood ratio.}
 }
 
 \value{
   The cutoff (a single value).
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{cutoff}},
   \code{\link{llrdist}},
@@ -44,5 +44,5 @@ co2 <- cutoff.llr(f,method="qu",value=0.2)
 co3 <- cutoff.llr(f,method="qs",value=0.9)
 co4 <- cutoff.llr(f,method="lr",value=4.0)
 }
-                    
+
 \keyword{cluster}

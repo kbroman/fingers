@@ -27,7 +27,7 @@ pull.markers(dat,lo=0.1,hi=0.6,f=freq(dat))
   markers with band allele frequency between \code{lo} and \code{hi}.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{freq}} }
 
@@ -36,5 +36,5 @@ data(shiff1)
 f <- freq(shiff1)
 subset <- pull.markers(shiff1, 0.1, 0.6, f)
 }
-                    
+
 \keyword{manip}

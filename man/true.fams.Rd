@@ -6,7 +6,7 @@
 
 \description{
   Use the row names of a RAPD data set to identify the true sets of
-  families. 
+  families.
 }
 
 \usage{
@@ -25,7 +25,7 @@ true.fams(dat)
   containing the indices of individuals placed in that family.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{aedes}}, \code{\link{simrapd}},
   \code{\link{fingers}},
@@ -42,5 +42,5 @@ true.fams(dat)
 data(aedes)
 tf <- true.fams(aedes)
 }
-                    
+
 \keyword{cluster}

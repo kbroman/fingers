@@ -27,7 +27,7 @@ dist.image(dist,fams=NULL,col=topo.colors(1+ncol(dist)),\dots)
   image of the distance matrix.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{calc.dist}},
   \code{\link{true.fams}} }

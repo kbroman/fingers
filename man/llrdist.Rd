@@ -5,7 +5,7 @@
 
 \description{
   Calculate a distance matrix, based on the log likelihood ratio
-  comparing the hypotheses of full sibling versus unrelated,  
+  comparing the hypotheses of full sibling versus unrelated,
   for a RAPD data set.
 }
 
@@ -30,14 +30,14 @@ llrdist(dat,p=freq(dat))
   B/N/D is 0; this makes the resulting distances \eqn{\ge}{>} 0.
 
   Calculations are performed in a C program.
-}  
+}
 
 \value{
   A symmetric matrix of dimension (n.ind x n.ind), containing the
   distances between individuals.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{calc.dist}}, \code{\link{fingers}} }
 
@@ -46,5 +46,5 @@ data(aedes)
 f <- freq(aedes)
 dis <- llrdist(aedes,f)
 }
-                    
+
 \keyword{cluster}

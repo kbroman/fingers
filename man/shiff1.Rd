@@ -2,9 +2,9 @@
 \alias{shiff1}
 
 \title{Schistosome data}
-\description{ 
+\description{
   This is RAPD data for 35 loci typed on a set of 135 individuals.
-} 
+}
 \usage{data(shiff1)}
 \format{
   The data is a matrix of 135 rows (the individuals) by 35 columns (the
@@ -16,7 +16,7 @@
   Bloomberg School of Public Health, The Johns Hopkins University
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu} }
+\author{Karl W Broman \email{broman@wisc.edu} }
 
 \examples{
 data(shiff1)

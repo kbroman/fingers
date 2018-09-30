@@ -24,7 +24,7 @@
   \url{http://csu-cvmbs.colostate.edu/academics/mip/aidl/Pages/black-william.aspx}
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 
 \examples{

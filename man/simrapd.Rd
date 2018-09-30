@@ -22,7 +22,7 @@ simrapd(n.sib = rep(15,10), p = c(rep(0.125,8),rep(0.175,5),rep(0.225,5),
 
 \details{
   The RAPDs are assumed to be in Hardy-Weinberg equilibrium.
-}  
+}
 
 \value{
   A matrix of dimension (n.ind x n.mar), giving the RAPD phenotypes for
@@ -30,7 +30,7 @@ simrapd(n.sib = rep(15,10), p = c(rep(0.125,8),rep(0.175,5),rep(0.225,5),
   indicating no band.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{simulfams}} }
 
@@ -44,5 +44,5 @@ simrapd(n.sib = rep(15,10), p = c(rep(0.125,8),rep(0.175,5),rep(0.225,5),
 \examples{
 data <- simrapd(rep(20,5), p=runif(40, 0.1, 0.6))
 }
-                    
+
 \keyword{datagen}

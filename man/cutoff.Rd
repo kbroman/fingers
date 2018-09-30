@@ -21,14 +21,14 @@ cutoff(f,method=c("qu","meansib","qs","lr"),value=0.2)
    likelihood ratio for unrelateds vs. siblings (\code{lr}).}
  \item{value}{For \code{method="qu"} or \code{method="qs"}, this should
    specify the quantile; for \code{method="lr"}, this should specify the
-   likelihood ratio.}  
+   likelihood ratio.}
 }
 
 \value{
   The cutoff (a single value).
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{cutoff.llr}},
   \code{\link{freq}},
@@ -50,5 +50,5 @@ co2 <- cutoff(f,method="qu",value=0.2)
 co3 <- cutoff(f,method="qs",value=0.9)
 co4 <- cutoff(f,method="lr",value=4.0)
 }
-                    
+
 \keyword{cluster}

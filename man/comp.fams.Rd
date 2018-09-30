@@ -5,7 +5,7 @@
 
 \description{
   Give diagnostic information indicating how well two sets of clusters
-  conform. 
+  conform.
 }
 
 \usage{
@@ -26,7 +26,7 @@ comp.fams(fam1,fam2)
   assignment in \code{fam2}.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{cluster.stat}},
   \code{\link{fingers}},
@@ -41,5 +41,5 @@ fam <- fingers(d,co,make.plot=TRUE)
 tf <- true.fams(aedes)
 comp.fams(fam,tf)
 }
-                    
+
 \keyword{cluster}

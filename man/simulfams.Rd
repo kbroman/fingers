@@ -29,7 +29,7 @@ simulfams(n.sib=sample(5:20,size=sample(5:20,size=1),replace=TRUE),
   indicating no band.
 }
 
-\author{Laura Plantinga and Karl Broman \email{kbroman@biostat.wisc.edu}}
+\author{Laura Plantinga and Karl Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{simrapd}} }
 

@@ -46,7 +46,7 @@ fingers(dist,cutoff=NULL,method=c("average","complete",
   \code{attr(result,"cutoff")} to obtain this value.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{cutoff}},
   \code{\link{cutoff.llr}},

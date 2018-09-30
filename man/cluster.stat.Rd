@@ -4,7 +4,7 @@
 \title{Calculate measure of quality of inferred clusters}
 
 \description{
-  Calculate a score indicating how well two sets of clusters 
+  Calculate a score indicating how well two sets of clusters
   conform.
 }
 
@@ -34,12 +34,12 @@ cluster.stat(fam1,fam2,method=c("all","rand","adj","fm","kb"))
   here in order to allow comparisons to be made) is just like the Rand
   index, but \code{fam2} is assumed to be the \emph{true} partition, and
   the set of all pairs in the same group (by \code{fam2}) and the set of
-  all pairs in different groups (by \code{fam2}), are given equal weight. 
+  all pairs in different groups (by \code{fam2}), are given equal weight.
 
   Let \eqn{n_{ij}}{n[ij]} be the number of individuals in group i by
   partition 1 and group j by partition 2.  Let \eqn{n_{i.} = \sum_{j}
     n_{ij}}{n[i.] = sum j n[ij]} and define \eqn{n_{.j}}{n[.j]}
-  similarly.  
+  similarly.
 
   In the adjusted-Rand index (Hubert and Arabie 1985), \dots
 
@@ -51,7 +51,7 @@ cluster.stat(fam1,fam2,method=c("all","rand","adj","fm","kb"))
   The value of a score for comparing two sets of clusters.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{fingers}},
   \code{\link{true.fams}} }
@@ -81,5 +81,5 @@ tf <- true.fams(aedes)
 cluster.stat(fam,tf)
 cluster.stat(fam,tf,method="fm")
 }
-                    
+
 \keyword{cluster}

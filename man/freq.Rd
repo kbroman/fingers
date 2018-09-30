@@ -14,7 +14,7 @@ freq(dat)
 \arguments{
  \item{dat}{A matrix of size (n.ind x n.mar) containing RAPD
    phenotypes, with 1 indicating the presence of a band and 0 indicating
-   absence.} 
+   absence.}
 }
 
 \details{
@@ -22,14 +22,14 @@ freq(dat)
   frequency of the band allele is estimated as \eqn{\hat{p} =
     1-\sqrt{1-\bar{x}}}{phat = 1 - sqrt(1 - xbar)} where
   \eqn{\bar{x}}{xbar} is the proportion of individuals showing a band.
-}  
+}
 
 \value{
   A vector of length n.mar, containing the estimated frequencies of the
   band allele for each RAPD marker.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{pull.markers}} }
 
@@ -44,5 +44,5 @@ freq(dat)
 data(aedes)
 f <- freq(aedes)
 }
-                    
+
 \keyword{univar}

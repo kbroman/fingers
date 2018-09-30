@@ -20,15 +20,15 @@ calc.dist(dat)
 \details{
   For each pair of individuals, we calculate the proportion of RAPD
   markers (among those where both individuals have complete data) at
-  which one individual shows a band and the other doesn't. 
-}  
+  which one individual shows a band and the other doesn't.
+}
 
 \value{
   A symmetric matrix of dimension (n.ind x n.ind), containing the
   distances between individuals.
 }
 
-\author{Karl W Broman \email{kbroman@biostat.wisc.edu}}
+\author{Karl W Broman \email{broman@wisc.edu}}
 
 \seealso{ \code{\link{llrdist}}, \code{\link{fingers}} }
 
@@ -43,5 +43,5 @@ calc.dist(dat)
 data(aedes)
 d <- calc.dist(aedes)
 }
-                    
+
 \keyword{cluster}
