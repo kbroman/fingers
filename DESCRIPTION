@@ -2,8 +2,12 @@ Package: fingers
 Version: 0.60-5
 Date: 2017-05-05
 Title: Identifying Clusters of Related Individuals
-Author: Karl W Broman <broman@wisc.edu> with contributions from Laura Plantinga
+Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>),
+    Laura Plantinga [ctb]
 Maintainer: Karl W Broman <broman@wisc.edu>
+Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
+             email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671")),
+             person("Laura", "Plantinga", rol="ctb"))
 Description: Identifying clusters of related individuals.
 Depends: R (>= 2.10.1)
 Imports: stats, graphics, grDevices
