@@ -1,8 +1,8 @@
 ## R/fingers
 
-[![Build Status](https://travis-ci.org/kbroman/qtlsim.svg?branch=master)](https://travis-ci.org/kbroman/qtlsim)
+[![R build status](https://github.com/kbroman/fingers/workflows/R-CMD-check/badge.svg)](https://github.com/kbroman/fingers/actions)
 
-[Karl W Broman](http://kbroman.org)
+[Karl W Broman](https://kbroman.org)
 
 [R/fingers](https://github.com/kbroman/fingers) is an R package for identifying clusters of related
 individuals with genotype data at dominant markers.
