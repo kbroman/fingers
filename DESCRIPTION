@@ -7,7 +7,7 @@ Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>),
 Maintainer: Karl W Broman <broman@wisc.edu>
 Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
              email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671")),
-             person("Laura", "Plantinga", rol="ctb"))
+             person("Laura", "Plantinga", role="ctb"))
 Description: Identifying clusters of related individuals.
 Depends: R (>= 2.10.1)
 Imports: stats, graphics, grDevices
