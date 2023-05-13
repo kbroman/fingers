@@ -1,6 +1,7 @@
 ## R/fingers
 
-[![R build status](https://github.com/kbroman/fingers/workflows/R-CMD-check/badge.svg)](https://github.com/kbroman/fingers/actions)
+[![R-CMD-check](https://github.com/kbroman/fingers/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/fingers/actions/workflows/R-CMD-check.yaml)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5149503.svg)](https://doi.org/10.5281/zenodo.5149503)
 
 [Karl W Broman](https://kbroman.org)
 
