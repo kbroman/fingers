@@ -1,9 +1,14 @@
 Revision history for the R/fingers package
 ----------------------------------------------------------------------
-copyright (c) 2001-2017, Karl W Broman
+copyright (c) 2001-2026, Karl W Broman
 Licensed under the GNU General Public License version 2 (June, 1991)
 https://github.com/kbroman/fingers
 ----------------------------------------------------------------------
+
+Version 0.60-6, 2026-05-05
+
+  Remove includes of R_ext/PrtUtil.h from C code
+
 
 Version 0.60-5, 2017-05-05
 
