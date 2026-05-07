@@ -20,9 +20,7 @@
   aegypti}.  Theor Appl Genet 86:991-1000.
 }
 
-\source{FINGERS software, WC Black IV, Colorado State University \cr
-  \url{http://csu-cvmbs.colostate.edu/academics/mip/aidl/Pages/black-william.aspx}
-}
+\source{FINGERS software, WC Black IV, Colorado State University}
 
 \author{Karl W Broman \email{broman@wisc.edu}}
 
