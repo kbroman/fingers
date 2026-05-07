@@ -1,5 +1,5 @@
 /**********************************************************************
- * 
+ *
  * cutoffs.c
  *
  * copyright (c) 2001, Karl W Broman
@@ -8,7 +8,7 @@
  * C functions to calculate cutoffs for the hierarchical clustering
  * in the Fingers program.
  *
- * Contains: cutoff, cutoff_s, cutoff_lr, 
+ * Contains: cutoff, cutoff_s, cutoff_lr,
  *           cutoff_llr, cutoff_llr_s, cutoff_llr_meansib, cutoff_llr_lr
  *
  * ARGUMENTS: nmar     = number of markers
@@ -23,14 +23,13 @@
 #include <stdio.h>
 #include <R.h>
 #include <Rmath.h>
-#include <R_ext/PrtUtil.h>
 #include "llrdist.h"
 #include "cutoffs.h"
 
 /* cutoff: (prop'n mismatches)
    use a quantile from the distr'n of dist between unrelateds */
-void cutoff(int *nmar, double *freq, double *quantile, 
-	    double *cutoff)
+void cutoff(int *nmar, double *freq, double *quantile,
+        double *cutoff)
 {
   int i;
   double p, q, mean, sd;
@@ -51,8 +50,8 @@ void cutoff(int *nmar, double *freq, double *quantile,
 
 /* cutoff_s: (prop'n mismatches)
    use a quantile from the distr'n of dist between sibings */
-void cutoff_s(int *nmar, double *freq, double *quantile, 
-	      double *cutoff)
+void cutoff_s(int *nmar, double *freq, double *quantile,
+          double *cutoff)
 {
   int i;
   double p, q, mean, sd;
@@ -61,7 +60,7 @@ void cutoff_s(int *nmar, double *freq, double *quantile,
   for(i=0; i<*nmar; i++) {
     p = freq[i]; q = 1.0 - p;
     p = (1.0 - p*p - 2.0*p*p*p*q - 3.5*p*p*q*q - 2.0*p*q*q*q -
-	 q*q*q*q);
+     q*q*q*q);
     mean += p;
     sd += p*(1.0-p);
   }
@@ -74,8 +73,8 @@ void cutoff_s(int *nmar, double *freq, double *quantile,
 
 /* cutoff_lr: (prop'n mismatches)
    use value of LR comparing unrelateds to siblings */
-void cutoff_lr(int *nmar, double *freq, double *value, 
-	       double *cutoff)
+void cutoff_lr(int *nmar, double *freq, double *value,
+           double *cutoff)
 {
   int i;
   double p, q, ps, pu, meanu, sdu, means, sds;
@@ -85,7 +84,7 @@ void cutoff_lr(int *nmar, double *freq, double *value,
     p=freq[i]; q = 1.0 - p;
     pu = 2.0*q*q*(1.0-q*q); /* prob of mismatch */
     ps = (1.0 - p*p - 2.0*p*p*p*q - 3.5*p*p*q*q - 2.0*p*q*q*q -
-	 q*q*q*q);
+     q*q*q*q);
     meanu += pu; means += ps;
     sdu += pu*(1.0-pu); sds += ps*(1.0-ps);
   }
@@ -101,8 +100,8 @@ void cutoff_lr(int *nmar, double *freq, double *value,
 
 /* cutoff_llr: (Karl's LLR distance)
    uses a quantile from the distr'n of dist between unrelateds */
-void cutoff_llr(int *nmar, double *freq, double *quantile, 
-		double *cutoff)
+void cutoff_llr(int *nmar, double *freq, double *quantile,
+        double *cutoff)
 {
   int i, j;
   double mean, sd, meantemp, vartemp, d[3], pr[3], p, q;
@@ -131,8 +130,8 @@ void cutoff_llr(int *nmar, double *freq, double *quantile,
 
 /* cutoff_llr_s: (Karl's LLR distance)
    uses a quantile from the distr'n of dist between siblings */
-void cutoff_llr_s(int *nmar, double *freq, double *quantile, 
-		  double *cutoff)
+void cutoff_llr_s(int *nmar, double *freq, double *quantile,
+          double *cutoff)
 {
   int i, j;
   double mean, sd, meantemp, vartemp, d[3], pr[3], p, q;
@@ -174,7 +173,7 @@ void cutoff_llr_meansib(int *nmar, double *freq, double *cutoff)
     pr[2] = p*p+2.0*p*p*p*q+3.25*p*p*q*q+p*q*q*q; /* prob both have band */
     pr[1] = 1.0-pr[0]-pr[2]; /* prob of mismatch */
     meantemp = 0.0;
-    for(j=0; j<3; j++) 
+    for(j=0; j<3; j++)
       meantemp += pr[j]*d[j];
     mean += meantemp;
   }
@@ -187,7 +186,7 @@ void cutoff_llr_meansib(int *nmar, double *freq, double *cutoff)
 /* cutoff_llr_lr: (Karl's LLR distance)
    use value of LR comparing unrelateds to siblings */
 void cutoff_llr_lr(int *nmar, double *freq, double *value,
-		   double *cutoff)
+           double *cutoff)
 {
   int i, j;
   double meanu, sdu, meanutemp, varutemp;
@@ -242,13 +241,13 @@ double find_lr(double m1, double s1, double m2, double s2, double value)
 
   flo = dnorm(lo,m1,s1,1)-dnorm(lo,m2,s2,1);
   fhi = dnorm(hi,m1,s1,1)-dnorm(hi,m2,s2,1);
-  
+
   for(i=0; i<MAXIT; i++) {
     fmid = dnorm(mid,m1,s1,1)-dnorm(mid,m2,s2,1);
 
     if(fabs(fmid-value) < TOL) return(mid);
 
-    if(fmid > value) { 
+    if(fmid > value) {
       hi=mid; fhi=fmid;
     }
     else {
@@ -261,7 +260,7 @@ double find_lr(double m1, double s1, double m2, double s2, double value)
   warning("Didn't converge\n");
   return(mid);
 }
-      
+
 
 
 /* end of cutoffs.c */
